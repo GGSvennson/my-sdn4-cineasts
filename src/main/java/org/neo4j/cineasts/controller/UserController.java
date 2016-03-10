@@ -18,7 +18,6 @@ import java.util.List;
 import org.neo4j.cineasts.domain.User;
 import org.neo4j.cineasts.repository.MovieRepository;
 import org.neo4j.cineasts.repository.UserRepository;
-import org.neo4j.cineasts.util.MyUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles and retrieves the login or denied page depending on the URI template
  */
 @Controller
-public class UserController extends MyUtil {
+public class UserController {
 
     @Autowired
     UserRepository userRepository;
@@ -88,5 +87,7 @@ public class UserController extends MyUtil {
         return "/user/public";
     }
 
-    
+    public boolean areFriends(User user, User loggedIn) {
+        return user!=null && user.isFriend(loggedIn);
+    }
 }

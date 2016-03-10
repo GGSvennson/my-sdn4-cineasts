@@ -22,7 +22,6 @@ import org.neo4j.cineasts.repository.ActorRepository;
 import org.neo4j.cineasts.repository.MovieRepository;
 import org.neo4j.cineasts.repository.UserRepository;
 import org.neo4j.cineasts.service.DatabasePopulator;
-import org.neo4j.cineasts.util.MyUtil;
 import org.neo4j.helpers.collection.IteratorUtil;
 import org.neo4j.ogm.cypher.Filter;
 import org.neo4j.ogm.session.Session;
@@ -44,7 +43,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since 04.03.11
  */
 @Controller
-public class MovieController extends MyUtil {
+public class MovieController {
 
     private static final Logger log = LoggerFactory.getLogger(MovieController.class);
     @Autowired
